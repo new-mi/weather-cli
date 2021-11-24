@@ -30,10 +30,13 @@
   "homepage": "https://test@test.ru",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/new-mi/weather-cli"
   },
   "bugs": {
     "url": "https://test@test.ru",
     "email": "mvagin@bk.ru"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
   }
 }
