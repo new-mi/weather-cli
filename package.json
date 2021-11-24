@@ -5,7 +5,10 @@
   "description": "CLI for getting weather",
   "funding": "https://test@test.ru",
   "main": "index.js",
-  "bin": "./index.js",
+  "type": "module",
+  "bin": {
+    "weather": "weather.js"
+  },
   "os": [
     "!win32"
   ],
