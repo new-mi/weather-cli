@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import dedent from 'dedent-js'
 
-const { bgCyan, bgRed } = chalk
+const { bgCyan, bgRed, bgGreen } = chalk
 
 export const printError = (errorText) => console.log(`${bgRed(' ERROR ')} ${errorText}`);
 
