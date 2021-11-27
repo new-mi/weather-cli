@@ -3,6 +3,29 @@ import https from 'https'
 import { DICTIONARY, TYPE_REQUEST } from '../helpers/constants.js'
 import { getKeyValue } from './storage.js'
 
+export const getIcon = (icon) => {
+	switch (icon.slice(0, -1)) {
+		case '01':
+			return '☀️';
+		case '02':
+			return '🌤️';
+		case '03':
+			return '☁️';
+		case '04':
+			return '☁️';
+		case '09':
+			return '🌧️';
+		case '10':
+			return '🌦️';
+		case '11':
+			return '🌩️';
+		case '13':
+			return '❄️';
+		case '50':
+			return '🌫️';
+	}
+}
+
 export const getWeather = async (city, type = TYPE_REQUEST.axios) => {
 	const token = process.env.TOKEN ?? await getKeyValue(DICTIONARY.token);
 	let data = null
