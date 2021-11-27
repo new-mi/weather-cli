@@ -4,7 +4,7 @@ import { DICTIONARY, TYPE_REQUEST } from '../helpers/constants.js'
 import { getKeyValue } from './storage.js'
 
 export const getWeather = async (city, type = TYPE_REQUEST.axios) => {
-	const token = await getKeyValue(DICTIONARY.token);
+	const token = process.env.TOKEN ?? await getKeyValue(DICTIONARY.token);
 	let data = null
 	if (!token) {
 		throw new Error('Не задан ключ API, задайте его через команду -t [API_KEY]')
@@ -17,6 +17,7 @@ export const getWeather = async (city, type = TYPE_REQUEST.axios) => {
 	}
 
 	console.log(data)
+	return data;
 }
 
 
