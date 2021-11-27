@@ -1,28 +1,15 @@
 {
-  "name": "weather-cli",
+  "name": "@new-mi/weather-cli",
   "version": "1.0.0",
   "private": false,
   "description": "CLI for getting weather",
-  "funding": "https://test@test.ru",
-  "main": "index.js",
+  "main": "weather.js",
   "type": "module",
   "bin": {
     "weather": "weather.js"
   },
-  "os": [
-    "!win32"
-  ],
-  "cpu": [
-    "!mips"
-  ],
-  "man": [
-    "./README.md"
-  ],
   "engines": {
     "node": ">14"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "CLI",
@@ -30,14 +17,9 @@
   ],
   "author": "Mikhail Vagin",
   "license": "ISC",
-  "homepage": "https://test@test.ru",
   "repository": {
     "type": "git",
     "url": "https://github.com/new-mi/weather-cli"
-  },
-  "bugs": {
-    "url": "https://test@test.ru",
-    "email": "mvagin@bk.ru"
   },
   "dependencies": {
     "axios": "^0.24.0",
