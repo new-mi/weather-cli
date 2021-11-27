@@ -15,8 +15,6 @@ export const getWeather = async (city, type = TYPE_REQUEST.axios) => {
 	} else {
 		data = await adapterHttps(city, token)
 	}
-
-	console.log(data)
 	return data;
 }
 
@@ -45,6 +43,18 @@ export const adapterHttps = async (city, token) => {
 		https.get(url, (response) => {
 			let res = '';
 
+			if (response.statusCode < 200 || response.statusCode > 299) {
+				response.on('data', (chunk) => {
+					res += chunk;
+				})
+	
+				response.on('end', () => {
+					reject(JSON.parse(res))
+				})
+
+				return;
+			}
+
 			response.on('data', (chunk) => {
 				res += chunk;
 			})
@@ -52,6 +62,9 @@ export const adapterHttps = async (city, token) => {
 			response.on('end', () => {
 				resolve(JSON.parse(res))
 			})
+
+		}).on('error', (e) => {
+			reject(e)
 		})
 	})
 }
